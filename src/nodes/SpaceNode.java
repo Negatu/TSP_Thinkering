@@ -22,7 +22,8 @@ public class SpaceNode implements Node{
 		int[] neighbor_coordinates = neighbor.get_coordinates();
 		for (int i = 0; i < my_coordinates.length; i++){
 			int distance_i = Math.abs(my_coordinates[i] - neighbor_coordinates[i]);
-			distance += Math.pow(distance_i, 2);
+			//distance += Math.pow(distance_i, 2);
+			distance += distance_i;
 		}
 		return distance;
 	}

@@ -1,4 +1,7 @@
 import nodes.*;
+
+import java.util.Arrays;
+
 import algorithms.*;
 
 public class Test_Algorithm {
@@ -25,12 +28,16 @@ public class Test_Algorithm {
 		Node[] ordered_node_list = myAlgorithm.get_ordered_list(node_list);
 		
 		double total_edge_weight = 0;
-		String ordered_list = ordered_node_list[0].get_id() + ", ";
+		String ordered_list = ordered_node_list[0].get_id() +", ";
+		String coordinate_list = Arrays.toString(ordered_node_list[0].get_coordinates()) + ", ";
 		for (int i = 1; i < ordered_node_list.length; i++){
 			ordered_list += ordered_node_list[i].get_id() + ", ";
+			coordinate_list += Arrays.toString(ordered_node_list[i].get_coordinates()) + ", ";
 			total_edge_weight += ordered_node_list[i].get_distance(ordered_node_list[i-1]);
 		}
+		total_edge_weight += ordered_node_list[ordered_node_list.length-1].get_distance(ordered_node_list[0]);
 		System.out.println(ordered_list);
+		System.out.println(coordinate_list);
 		System.out.println("Total Weight : " + total_edge_weight);
 		
 		// Time took for test

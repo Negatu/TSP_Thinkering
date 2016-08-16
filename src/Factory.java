@@ -27,6 +27,8 @@ public class Factory {
 			return new DummyAlgorithm();
 		} else if (algorithm_name.equals("-greedy-")) {
 			return new GreedyAlgorithm();
+		} else if (algorithm_name.equals("-brute-force-")) {
+			return new BruteForceAlgorithm();
 		} else {
 			throw new RuntimeException("Unknown Algorithm name");
 		}
