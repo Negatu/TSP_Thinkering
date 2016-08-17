@@ -15,6 +15,21 @@ public class SpaceNode implements Node{
 		my_coordinate_limit = coordinate_limit;
 		construct_myself_randomly();
 	}
+	
+	public SpaceNode(int id, int[] coordinates){
+		my_id = id;
+		my_coordinates = coordinates;
+	}
+	
+	@Override
+	public void construct_myself_randomly() {
+		Random myGen = new Random();
+		my_coordinates = new int[my_dimension];
+		for (int i = 0; i < my_dimension; i++){
+			my_coordinates[i] = myGen.nextInt(my_coordinate_limit);
+		}
+		
+	}
 
 	@Override
 	public double get_distance(Node neighbor) {
@@ -26,16 +41,6 @@ public class SpaceNode implements Node{
 			distance += distance_i;
 		}
 		return distance;
-	}
-
-	@Override
-	public void construct_myself_randomly() {
-		Random myGen = new Random();
-		my_coordinates = new int[my_dimension];
-		for (int i = 0; i < my_dimension; i++){
-			my_coordinates[i] = myGen.nextInt(my_coordinate_limit);
-		}
-		
 	}
 
 	@Override

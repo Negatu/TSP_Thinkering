@@ -5,7 +5,8 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		
-		Node[] node_list = Factory.get_node_list("-space-", 10);
+		Node[] node_list = Factory.get_node_list("-space-2", 10);
+		//Node[] node_list = Factory.get_node_list("one_d_test.txt");
 		
 		System.out.println("Brute Force Algorithm - ");
 		Test_Algorithm brute_force_test = new Test_Algorithm("-brute-force-", node_list);
